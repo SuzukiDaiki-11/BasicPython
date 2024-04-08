@@ -10,9 +10,9 @@ def trapezoidal(f, a, b, N):
     S = 0
 
     for k in range(1, N+1):
-        S += (h / 2) * (f(a + (k-1) * h) + f(a + k * h))
+        S += (h / 2) * (sin(a + (k-1) * h) + sin(a + k * h))
 
-        return S
+    return S
 
 result = trapezoidal(math.sin, 0, math.pi/2, 100)
 print(result)

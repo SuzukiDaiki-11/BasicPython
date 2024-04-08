@@ -5,16 +5,26 @@ b = input("bの値を入力: ")
 a = int(a)
 b = int(b)
 
-if a % 2 == 0:
-    print("素数ではありません")
-elif a == 1:
-    print("素数ではありません")
-else:
-    print("素数です")
+def is_prime(n):
+    if n <= 1:
+        return False
+    elif n <= 3:
+        return True
+    elif n % 2 == 0 or n % 3 == 0:
+        return False
+    i = 5
+    while i * i <= n:
+        if n % i == 0 or n % (i + 2) == 0:
+            return False
+        i += 6
+    return True
 
-if b % 2 == 0:
-    print("素数ではありません")
-elif b == 1:
-    print("素数ではありません")
+if is_prime(a):
+    print(f"{a} は素数です")
 else:
-    print("素数です")
+    print(f"{a} は素数ではありません")
+
+if is_prime(b):
+    print(f"{b} は素数です")
+else:
+    print(f"{b} は素数ではありません")
