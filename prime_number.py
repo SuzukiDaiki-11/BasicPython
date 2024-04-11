@@ -27,4 +27,4 @@ else:
 if is_prime(b):
     print(f"{b} は素数です")
 else:
-    print(f"{b} は素数ではありません")
+    print("素数です")
