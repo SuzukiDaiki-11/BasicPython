@@ -8,9 +8,9 @@ b = int(b)
 def is_prime(n):
     if n <= 1:
         return False
-    elif n <= 3:
+    if n <= 3:
         return True
-    elif n % 2 == 0 or n % 3 == 0:
+    if n % 2 == 0 or n % 3 == 0:
         return False
     i = 5
     while i * i <= n:
@@ -27,4 +27,4 @@ else:
 if is_prime(b):
     print(f"{b} は素数です")
 else:
-    print("素数です")
+    print(f"{b} は素数ではありません")
