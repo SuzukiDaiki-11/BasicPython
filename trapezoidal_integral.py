@@ -35,11 +35,10 @@ print("(2)の結果:", integral_2)
 # (3) 
 def function_3(x):
     if x >= 0:
-        return math.sqrt(x) * math.exp(-x**2)
+        return math.sqrt(math.pi) * math.exp(-x**2)
     else:
         return 0
-    #return math.e**(-x**2) * x**(1/2)
-    #return math.sqrt(x) * math.exp(-x**2)
+    
 
 integral_3 = trapezoidal_integration(function_3, -100, 100, 1000)
 print("(3)の結果:", integral_3)
