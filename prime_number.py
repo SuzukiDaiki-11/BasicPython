@@ -1,30 +1,28 @@
-a = input("aの値を入力: ")
-b = input("bの値を入力: ")
+n = input("nの値を入力: ")
+
 
 # TODO
-a = int(a)
-b = int(b)
+n = int(n)
+
+try:
+    n = int(n)
+except ValueError:
+    print("整数を入力してください。")
+    exit()
 
 def is_prime(n):
-    if n <= 1:
+    
+    if n <= 0:
+        raise ValueError("自然数を入力してください。")
+    if n < 2 :
         return False
-    if n <= 3:
-        return True
-    if n % 2 == 0 or n % 3 == 0:
-        return False
-    i = 5
-    while i * i <= n:
-        if n % i == 0 or n % (i + 2) == 0:
+    for i in range(2,n):
+        if (n % i == 0):
             return False
-        i += 6
-    return True
+    else:
+        return True
 
-if is_prime(a):
-    print(f"{a} は素数です")
+if is_prime(n):
+    print(f"{n} は素数です。")
 else:
-    print(f"{a} は素数ではありません")
-
-if is_prime(b):
-    print(f"{b} は素数です")
-else:
-    print(f"{b} は素数ではありません")
+    print(f"{n} は素数ではありません。")

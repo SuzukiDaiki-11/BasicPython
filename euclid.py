@@ -5,16 +5,21 @@ b = input("b の値を入力: ")
 a = int(a)
 b = int(b)
 
-def euclid(a, b):
-    if a < b:
-        a, b = b, a
-    else:
-        a, b = a, b
-    
-    while b != 0:
-        a, b =b, a % b
-    return a, b
+import random
+import math
 
-a, _ = euclid(a,b)
+def euclidean_algorithm(a, b):
+    while b:
+        a, b = b, a % b
+    return a
+
+def are_coprime(a, b):
+    gcd = euclidean_algorithm(a, b)
+    return gcd == 1
 
 print(f"最大公約数は{a}")
+
+if are_coprime(a, b):
+    print(f"{a} と {b} は互いに素です。")
+else:
+    print(f"{a} と {b} は互いに素ではありません。")
